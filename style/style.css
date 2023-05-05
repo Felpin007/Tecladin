@@ -15,6 +15,12 @@ html{
     
 
 }
+.tecla-branca:hover{
+    background-color: aqua;
+}
+.tecla-branca:active{
+    background-color: rgb(0, 157, 255);
+}
 .tecla-preta{
     background-color: black;
     width: 25px;
