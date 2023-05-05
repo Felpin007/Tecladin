@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="linearGradient">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecladodzin</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <h1 onclick="TocarNota(id)" id="Titulo">TECLADO</h1>
+    <div class="background"></div>
+    <div class="teclado">
+        <div onclick="TocarNota(id)" class="tecla-branca" id="1"></div>
+        <audio id="dó"> <source src="sons/do.mp3"></audio>
+        <div onclick="TocarNota(id)" class="tecla-branca" id="2"></div>
+        <audio id="re"> <source src="sons/re.wav"></audio>
+        <div onclick="TocarNota(id)" class="tecla-branca" id="3"></div>
+        <audio id="mi"> <source src="sons/mi.wav"></audio>
+        <div onclick="TocarNota(id)" class="tecla-branca" id="4"></div>
+        <audio id="fa"> <source src="sons/fa.wav"></audio>
+        <div onclick="TocarNota(id)" class="tecla-branca" id="5"></div>
+        <audio id="sol"> <source src="sons/sol.wav"></audio>
+        <div onclick="TocarNota(id)" class="tecla-branca" id="6"></div>
+        <audio id="la"> <source src="sons/la.wav"></audio>
+        <div onclick="TocarNota(id)" class="tecla-branca" id="7"></div>
+        <audio id="si"> <source src="sons/si.wav"></audio>
+
+        <audio id="tecladin"> <source src="sons/tecladinho.mp3"></audio>
+
+        <div class="tecla-preta-double" id="10"></div>
+        <div class="tecla-preta-double" id="20"></div>
+        <div class="tecla-preta" id="30"></div>
+        <div class="tecla-preta" id="40"></div>
+        <div class="tecla-preta" id="50"></div>
+    </div>
+    <img class="alien-esquerda" src="img/alien.gif" alt="">
+    <img class="alien-direita" src="img/alien.gif" alt="">
+</body>
+<script>
+
+function aplicarAnimacao() {
+    var estilo = document.createElement('style');
+    estilo.innerHTML = `
+        .tecla-branca.linearGradient {
+            background: linear-gradient(179deg, red, blue, green, purple, red);
+            background-size: 300% 300%;
+            animation: color 3s linear infinite;
+        }
+        @keyframes color {
+            0% {
+                background-position: 0 0%;
+            }
+            50% {
+                background-position: 50% 50%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+        .alien-esquerda{
+        position: absolute;
+        width: 20%;
+        left: 300px; 
+        visibility: visible;
+        }
+        .alien-direita{
+        position: absolute;
+        width: 20%;
+        right: 300px;
+        visibility: visible;
+}
+    `;
+    document.head.appendChild(estilo);
+}
+
+document.getElementById('Titulo').addEventListener('click', function() {
+    aplicarAnimacao();
+    var elementos = document.getElementsByClassName('tecla-branca');
+    for (var i = 0; i < elementos.length; i++) {
+        elementos[i].classList.add('linearGradient');
+    }
+});
+
+
+    function TocarNota(notaID){
+        console.log(notaID)
+        switch (notaID){
+            case "1":
+                if (!dó.paused) {
+                    dó.pause();
+                    dó.currentTime = 0; // Volte ao início do áudio
+                }
+                dó.play();
+                console.log("dó");
+                break
+            case "2":
+                if (!re.paused) {
+                    re.pause();
+                    re.currentTime = 0; // Volte ao início do áudio
+                }
+                re.play();
+                console.log("ré");
+                break
+            case "3":
+                if (!mi.paused) {
+                    mi.pause();
+                    mi.currentTime = 0; // Volte ao início do áudio
+                }
+                mi.play();
+                console.log("mi");
+                break
+            case "4": 
+                if (!fa.paused) {
+                    fa.pause();
+                    fa.currentTime = 0; // Volte ao início do áudio
+                }
+                fa.play();
+                console.log("fá");
+                break
+            case "5":
+                if (!sol.paused) {
+                    sol.pause();
+                    sol.currentTime = 0; // Volte ao início do áudio
+                }
+                sol.play();
+                console.log("sol");
+                break
+            case "6":
+                if (!la.paused) {
+                    la.pause();
+                    la.currentTime = 0; // Volte ao início do áudio
+                }
+                la.play();
+                console.log("lá");
+                break
+            case "7":
+                if (!si.paused) {
+                    si.pause();
+                    si.currentTime = 0; // Volte ao início do áudio
+                }
+                si.play();
+                console.log("si");
+                break
+            case "Titulo":
+                tecladin.play();
+                console.log("tecladinLindin clicado.")
+            default:
+                console.log("nenhuma tecla foi clicada.");
+                break
+        }
+    }
+
+</script>
+</html>

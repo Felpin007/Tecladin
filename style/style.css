@@ -82,3 +82,14 @@ body {
     right: 300px;
     visibility: hidden;
 }
+.background{
+    position: absolute;
+    width: 400px;
+    height: 170px;
+    background-color: rgb(55, 55, 55);
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 10px;
+    border-radius: 20px;
+}
