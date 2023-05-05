@@ -1,0 +1,78 @@
+html{
+    background-color: rgb(82, 82, 82);
+
+}
+.teclado{
+    left: 110px;
+    position: relative;
+    
+}
+.tecla-branca{
+    background-color: white;
+    width: 40px;
+    height: 150px;
+    display: inline-block;
+    
+
+}
+.tecla-preta{
+    background-color: black;
+    width: 25px;
+    height: 110px;
+    display: inline-block;  
+    position: relative;
+    margin-left: 8px;
+    margin-right: 8px;
+    right: 245px;
+    bottom: 40px;
+}
+.tecla-preta-double{
+    background-color: black;
+    width: 25px;
+    height: 110px;
+    display: inline-block;  
+    position: relative;
+    margin-left: 8px;
+    margin-right: 8px;
+    right: 286px;
+    bottom: 40px;
+}
+body{
+    text-align: center;
+}
+
+body {
+    user-select: none;
+    -webkit-user-select: none; /* para compatibilidade com navegadores WebKit, como Safari e Chrome */
+    -moz-user-select: none; /* para compatibilidade com navegadores Mozilla, como Firefox */
+    -ms-user-select: none; /* para compatibilidade com navegadores Microsoft, como Edge e Internet Explorer */
+}
+
+.linearGradient{
+    background: linear-gradient(45deg,red,blue,green,purple,red);
+    background-size: 3000% 3000%;
+    animation: color 30s linear infinite;
+}
+@keyframes color{
+    0%{
+        background-position: 0 0%;
+    }
+    50%{
+        background-position: 50% 50%;
+    }
+    100%{
+        background-position: 100% 100%;
+    }
+}
+.alien-esquerda{
+    position: absolute;
+    width: 20%;
+    left: 300px;
+    visibility: hidden;
+}
+.alien-direita{
+    position: absolute;
+    width: 20%;
+    right: 300px;
+    visibility: hidden;
+}
