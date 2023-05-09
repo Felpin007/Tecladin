@@ -9,33 +9,38 @@
 </head>
 <body>
     <h1 onclick="TocarNota(id)" id="Titulo">TECLADO</h1>
-    <div class="background"></div>
-    <div class="teclado">
-        <div onclick="TocarNota(id)" class="tecla-branca" id="1"></div>
-        <audio id="dó"> <source src="sons/do.mp3"></audio>
-        <div onclick="TocarNota(id)" class="tecla-branca" id="2"></div>
-        <audio id="re"> <source src="sons/re.wav"></audio>
-        <div onclick="TocarNota(id)" class="tecla-branca" id="3"></div>
-        <audio id="mi"> <source src="sons/mi.wav"></audio>
-        <div onclick="TocarNota(id)" class="tecla-branca" id="4"></div>
-        <audio id="fa"> <source src="sons/fa.wav"></audio>
-        <div onclick="TocarNota(id)" class="tecla-branca" id="5"></div>
-        <audio id="sol"> <source src="sons/sol.wav"></audio>
-        <div onclick="TocarNota(id)" class="tecla-branca" id="6"></div>
-        <audio id="la"> <source src="sons/la.wav"></audio>
-        <div onclick="TocarNota(id)" class="tecla-branca" id="7"></div>
-        <audio id="si"> <source src="sons/si.wav"></audio>
 
-        <audio id="tecladin"> <source src="sons/tecladinho.mp3"></audio>
+    <img id="ednaldoIMG" src="img/ednaldo.png" alt="">
+    <div class="tecladoficial">
+        <div class="background-a"></div>
+        <div class="background"></div>
+        <div class="teclado">
+            <div onclick="TocarNota(id)" class="tecla-branca" id="1"></div>
+            <audio id="dó"> <source src="sons/do.mp3"></audio>
+            <div onclick="TocarNota(id)" class="tecla-branca" id="2"></div>
+            <audio id="re"> <source src="sons/re.wav"></audio>
+            <div onclick="TocarNota(id)" class="tecla-branca" id="3"></div>
+            <audio id="mi"> <source src="sons/mi.wav"></audio>
+            <div onclick="TocarNota(id)" class="tecla-branca" id="4"></div>
+            <audio id="fa"> <source src="sons/fa.wav"></audio>
+            <div onclick="TocarNota(id)" class="tecla-branca" id="5"></div>
+            <audio id="sol"> <source src="sons/sol.wav"></audio>
+            <div onclick="TocarNota(id)" class="tecla-branca" id="6"></div>
+            <audio id="la"> <source src="sons/la.wav"></audio>
+            <div onclick="TocarNota(id)" class="tecla-branca" id="7"></div>
+            <audio id="si"> <source src="sons/si.wav"></audio>
 
-        <div class="tecla-preta-double" id="10"></div>
-        <div class="tecla-preta-double" id="20"></div>
-        <div class="tecla-preta" id="30"></div>
-        <div class="tecla-preta" id="40"></div>
-        <div class="tecla-preta" id="50"></div>
+            <audio id="tecladin"> <source src="sons/tecladinho.mp3"></audio>
+
+            <div class="tecla-preta-double" id="10"></div>
+            <div class="tecla-preta-double" id="20"></div>
+            <div class="tecla-preta" id="30"></div>
+            <div class="tecla-preta" id="40"></div>
+            <div class="tecla-preta" id="50"></div>
+        </div>
     </div>
-    <img class="alien-esquerda" src="img/alien.gif" alt="">
-    <img class="alien-direita" src="img/alien.gif" alt="">
+    <img id="alienesquerda" class="alien-esquerda" src="img/alien.gif" alt="">
+    <img id="aliendireita" class="alien-direita" src="img/alien.gif" alt="">
 </body>
 <script>
 
@@ -63,13 +68,38 @@ function aplicarAnimacao() {
         width: 20%;
         left: 300px; 
         visibility: visible;
+        top: 400px;
         }
         .alien-direita{
         position: absolute;
         width: 20%;
         right: 300px;
         visibility: visible;
+        top: 400px;
+
+
 }
+    `;
+    document.head.appendChild(estilo);
+}
+function aplicarAnimacao2() {
+    var estilo = document.createElement('style');
+    estilo.innerHTML = `
+        .tecladoficial{
+        position: relative;
+        left: 450px;
+    }
+    `;
+    document.head.appendChild(estilo);
+}
+
+function aplicarAnimacao3() {
+    var estilo = document.createElement('style');
+    estilo.innerHTML = `
+        .tecladoficial{
+        position: relative;
+        left: 0px;
+    }
     `;
     document.head.appendChild(estilo);
 }
@@ -80,6 +110,12 @@ document.getElementById('Titulo').addEventListener('click', function() {
     for (var i = 0; i < elementos.length; i++) {
         elementos[i].classList.add('linearGradient');
     }
+});
+document.getElementById('aliendireita').addEventListener('click', function() {
+    aplicarAnimacao2();
+});
+document.getElementById('alienesquerda').addEventListener('click', function() {
+    aplicarAnimacao3();
 });
 
 
